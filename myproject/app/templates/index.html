@@ -1,0 +1,165 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="PulseSite — сервис для проверки отображения сайтов в разных браузерах."
+    />
+    <title>PulseSite — проверка сайтов</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+  </head>
+  <body data-theme="home">
+    <header class="site-header">
+      <div class="container header__content">
+        <button
+          class="brand"
+          data-page="home"
+          aria-label="PulseSite — на главную"
+        >
+          <span class="brand__logo" aria-hidden="true">P</span>
+          <span>PulseSite</span>
+        </button>
+
+        <nav class="navbar" aria-label="Основная навигация">
+          <button
+            class="navbar__link is-active"
+            type="button"
+            data-page="home"
+            aria-current="page"
+          >
+            Главная
+          </button>
+          <a class="navbar__link" type="button" href="{% url 'registration' %}"
+            >Регистрация</a
+          >
+          <a
+            class="navbar__link navbar__link--accent"
+            type="button"
+            href="{% url 'Website_Test'%}"
+            >Проверить сайт</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero container" aria-labelledby="hero-title">
+        <div class="hero__content">
+          <p class="eyebrow" id="current-section">
+            <span></span> Проверка в реальных браузерах
+          </p>
+          <h1 id="hero-title">Ваш сайт выглядит <em>безупречно</em> везде.</h1>
+          <p class="hero__description" id="page-note">
+            PulseSite помогает быстро увидеть, как страницы отображаются в
+            разных браузерах и на разных устройствах — до того, как это заметят
+            ваши пользователи.
+          </p>
+
+          <div class="hero__actions">
+            <a
+              class="button button--primary"
+              type="button"
+              href="{% url 'Website_Test'%}"
+            >
+              Начать проверку
+              <span aria-hidden="true">→</span>
+            </a>
+            <a
+              class="button button--quiet"
+              type="button"
+              href="{% url 'registration' %}"
+              >Создать аккаунт</a
+            >
+          </div>
+
+          <dl class="highlights">
+            <div>
+              <dt>12+</dt>
+              <dd>браузеров</dd>
+            </div>
+            <div>
+              <dt>40+</dt>
+              <dd>устройств</dd>
+            </div>
+            <div>
+              <dt>&lt; 1 мин</dt>
+              <dd>до отчёта</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div
+          class="hero__visual"
+          aria-label="Демонстрация проверки сайта в браузерах"
+          role="img"
+        >
+          <div class="visual-glow"></div>
+          <div class="browser-window">
+            <div class="browser-window__top">
+              <div class="window-dots" aria-hidden="true">
+                <i></i><i></i><i></i>
+              </div>
+              <div class="address-bar">
+                <span class="address-bar__lock">⌁</span> example.com
+              </div>
+              <span class="browser-window__more" aria-hidden="true">•••</span>
+            </div>
+            <div class="browser-window__body">
+              <div class="demo-site">
+                <div class="demo-site__header">
+                  <span class="demo-site__mark"></span>
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="demo-site__hero">
+                  <div>
+                    <b></b><b></b><b></b>
+                    <small></small>
+                  </div>
+                  <div class="demo-site__orb"></div>
+                </div>
+                <div class="demo-site__cards"><i></i><i></i><i></i></div>
+              </div>
+              <div class="scan-line"></div>
+            </div>
+            <div class="scan-status">
+              <span class="scan-status__icon">✓</span>
+              <span
+                ><strong>Проверяем отображение</strong
+                ><small>Chrome · Firefox · Safari</small></span
+              >
+              <span class="scan-status__percent">86%</span>
+            </div>
+          </div>
+          <div class="browser-chip browser-chip--firefox">
+            <span>◒</span> Firefox
+          </div>
+          <div class="browser-chip browser-chip--safari">
+            <span>◌</span> Safari
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer__content">
+        <p>© 2026 <strong>PulseSite</strong>. Проверяйте уверенно.</p>
+        <button class="footer__download" type="button" data-page="download">
+          <span class="footer__download-icon" aria-hidden="true">↓</span>
+          Скачать приложение
+          <span class="footer__download-note">скоро</span>
+        </button>
+      </div>
+    </footer>
+
+    <div
+      class="toast"
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+    ></div>
+    <script src="{% static 'script.js' %}"></script>
+  </body>
+</html>
